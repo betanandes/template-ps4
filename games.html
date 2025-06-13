@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playstation 4</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="corpo">
+        <div class="flex ml-20 pt-10 justify-between">
+            <div class="w-15"><img src="imgs/ps.png" alt=""></div>
+            <div class="flex items-center">
+                <img class="size-10 rounded-full" src="imgs/us.png" alt="">
+                <p class="text-white ml-2">user</p>
+            </div>
+            <div class="flex justify-between">
+                <div class="mr-20"><img class="size-10" src="imgs/trofeu.png" alt=""></div>
+            </div>
+        </div>
+        
+        <div class="flex ml-15 mt-20 mr-15 justify-between">
+            <div class="size-55 games"><img src="imgs/store.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/tlou.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/cyberpunk.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/reddead.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/stardew.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/thewitcher.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/ittakes2.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/gow.png" alt=""></div>
+        </div>
+        <div id="game-info" class="mt-10 mx-20 p-4 text-white rounded-xl hidden">
+            <!-- conteudo de titulo e desc de cada jogo -->
+        </div>
+          
+          
+    </div>
+
+    <!-- Rodapé -->
+    <div class="-mt-12 flex ml-25">
+        <div class="flex items-center">
+            <img class="size-7 mr-2" src="imgs/x.png" alt="">
+            <p class="text-white text-2xl">Confirmar</p>
+        </div>
+        <a href="index.html">
+            <div class="flex items-center ml-8 ">
+                <img class="size-7 mr-2" src="imgs/o.webp" alt="">
+                <p class="text-white text-2xl">Cancelar</p>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        // titulo e texto pra cada card de jogo
+        const notes = [
+          { title: "store", text: "desc" },
+          { title: "The Last of Us", text: "desc" },
+          { title: "Cyberpunk", text: "desc" },
+          { title: "Red Dead Redemption", text: "desc" },
+          { title: "Stardew Valley", text: "desc" },
+          { title: "The Witcher", text: "desc" },
+          { title: "It Takes Two", text: "desc" },
+          { title: "God of War", text: "desc" }
+        ];
+      
+        const gameDivs = document.querySelectorAll('.games');
+        const gameInfo = document.getElementById('game-info');
+      
+        gameDivs.forEach((div, index) => {
+          div.addEventListener('click', () => {
+            if (div.classList.contains('active')) {
+              div.classList.remove('active');
+              gameInfo.classList.add('hidden');
+              gameInfo.innerHTML = "";
+              return;
+            }
+
+            gameDivs.forEach(d => d.classList.remove('active'));
+      
+            div.classList.add('active');
+
+            const content = `
+              <h2 class="text-6xl mb-2 text-white">${notes[index].title}</h2>
+              <p class="text-base text-white text-xl mt-10">${notes[index].text}</p>
+            `;
+      
+            gameInfo.innerHTML = content;
+            gameInfo.classList.remove('hidden');
+          });
+        });
+      </script>
+      
+      
+</body>
+
+</html>
