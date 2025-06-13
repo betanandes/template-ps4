@@ -9,6 +9,7 @@
 #### Estrutura
 - index.html: arquivo com a estrutura de "login" da página.
 - games.html: arquivo com a página de jogos principal
+- style.css: estilos personalizados além do Tailwind.
 - imgs/: pasta com imagens dos jogos e ícones.
 
 #### Observações
