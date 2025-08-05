@@ -13,8 +13,8 @@
         <div class="flex ml-20 pt-10 justify-between">
             <div class="w-15"><img src="imgs/ps.png" alt=""></div>
             <div class="flex items-center">
-                <img class="size-10 rounded-full" src="imgs/us.png" alt="">
-                <p class="text-white ml-2">user</p>
+                <img class="size-10 rounded-full" src="imgs/us_2.jpg" alt="">
+                <p class="text-white ml-2">Roberta ♡ Jean </p>
             </div>
             <div class="flex justify-between">
                 <div class="mr-20"><img class="size-10" src="imgs/trofeu.png" alt=""></div>
@@ -23,13 +23,13 @@
         
         <div class="flex ml-15 mt-20 mr-15 justify-between">
             <div class="size-55 games"><img src="imgs/store.png" alt=""></div>
-            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/tlou.png" alt=""></div>
-            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/cyberpunk.png" alt=""></div>
-            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/reddead.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/re.png" alt=""></div>
             <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/stardew.png" alt=""></div>
-            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/thewitcher.png" alt=""></div>
-            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/ittakes2.png" alt=""></div>
-            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/gow.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/it_takes.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/assassins.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/overcooked.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/the_sims.png" alt=""></div>
+            <div class="size-55 games"><img class="w-55 h-55 object-cover" src="imgs/a_way.png" alt=""></div>
         </div>
         <div id="game-info" class="mt-10 mx-20 p-4 text-white rounded-xl hidden">
             <!-- conteudo de titulo e desc de cada jogo -->
@@ -55,14 +55,22 @@
     <script>
         // titulo e texto pra cada card de jogo
         const notes = [
-          { title: "store", text: "desc" },
-          { title: "The Last of Us", text: "desc" },
-          { title: "Cyberpunk", text: "desc" },
-          { title: "Red Dead Redemption", text: "desc" },
-          { title: "Stardew Valley", text: "desc" },
-          { title: "The Witcher", text: "desc" },
-          { title: "It Takes Two", text: "desc" },
-          { title: "God of War", text: "desc" }
+          { title: "Feliz 2 anos de casados ♡", 
+          text: "Para cada jogo, um presente para vivermos juntos.\nE que você nunca se esqueça o quanto é importante e perfeito para mim." },
+          { title: "Resident Evil", 
+          text: "Se o apocalipse zumbi chegar, quero estar ao seu lado com uma shotgun e nosso amor como escudo.\nVocê é meu parceiro de missão até o fim dos tempos" },
+          { title: "Stardew Valley", 
+          text: "Um vale cozy para cultivar paz e nada de stress no nosso campo de boas energias.\nVale um dia inteiro comigo sem eu reclamar de nada!" },
+          { title: "It Takes Two", 
+          text: "Um lembrete de que juntos somos imparáveis, mesmo nas fases mais difíceis.\nTe escolheria em todas as partidas cooperativas da vida ♡" },
+          { title: "Assassins Creed Odyssey", 
+          text: "Você é meu Alexios na jornada pela Grécia da nossa história.\nSeguimos lado a lado, enfrentando batalhas, desvendando mistérios e vivendo nossa própria Odisseia do amor." },
+          { title: "Overcooked", 
+          text: "Nosso caos na cozinha pode até pegar fogo, mas o amor sempre tempera tudo.\nMesmo que eu grite 'pega o prato!!', saiba que é só o estresse gourmet do carinho kkkkk" },
+          { title: "The Sims 4", 
+          text: "No The Sims da vida real, eu já te coloquei como meu Sim favorito.\nCom direito a casa dos sonhos, desejos realizados e muito woohoo." },
+          { title: "A Way Out", 
+          text: "A gente fugiria até da prisão juntos, com direito a plano secreto e risadas no meio do caos.\nPorque quando estamos juntos, até os obstáculos viram filme de ação com final feliz." }
         ];
       
         const gameDivs = document.querySelectorAll('.games');
@@ -82,9 +90,10 @@
             div.classList.add('active');
 
             const content = `
-              <h2 class="text-6xl mb-2 text-white">${notes[index].title}</h2>
-              <p class="text-base text-white text-xl mt-10">${notes[index].text}</p>
+            <h2 class="text-6xl mb-2 text-white">${notes[index].title}</h2>
+            <p class="text-base text-white text-xl mt-10">${notes[index].text.replace(/\n/g, "<br>")}</p>
             `;
+
       
             gameInfo.innerHTML = content;
             gameInfo.classList.remove('hidden');
